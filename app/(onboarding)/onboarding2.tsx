@@ -1,51 +1,71 @@
-import { useRouter } from 'expo-router';
-import React from 'react';
-import { Image, Text, View } from 'react-native';
-import { OnboardingLayout } from '../../components/layout/OnboardingLayout';
-import { OnboardingButton } from '../../components/ui/OnboardingButton';
+import { OnboardingPagination } from "@/components/ui/OnboardingPagination";
+import { useRouter } from "expo-router";
+import React from "react";
+import { Image, Text, View } from "react-native";
+import { OnboardingLayout } from "../../components/layout/OnboardingLayout";
+import { OnboardingButton } from "../../components/ui/OnboardingButton";
 
 export default function Onboarding2() {
   const router = useRouter();
 
   const handleContinue = () => {
     // Ana sayfaya dön (paywall henüz yok)
-    router.push('/');
+    router.push("/");
   };
 
   return (
-    <OnboardingLayout backgroundSource={require('../../assets/plantassets/Background.png')}>
-      <View className="flex-1 justify-center items-center">
+    <OnboardingLayout
+      backgroundSource={require("../../assets/plantassets/Background.png")}
+    >
+      <View className="flex-1 justify-center">
         {/* Header Section */}
-        <View className="mb-8">
-          <Text className="text-3xl font-bold text-gray-900 text-center mb-2">
-            Get plant care guides
-          </Text>
-          {/* Underline effect */}
-          <View className="w-32 h-1 bg-green-400 rounded-full mx-auto" />
+        <View className="mb-8 mt-3 mx-6">
+          <View className="relative">
+            <Text className="text-4xl font-medium text-gray-900 tracking-tight" style={{ textShadowColor: "gray", textShadowOffset: { width: 0, height: 3 }, textShadowRadius: 6 }}>
+              Get plant <Text className="font-extrabold">care guides</Text>
+              {"\n"}
+            </Text>
+
+            {/* Çizgi Asset'i */}
+            <Image
+              source={require("../../assets/plantassets/careguides.png")} // Çizgi asset'iniz
+              className="absolute"
+              style={{
+                top: 32,
+                left: 140,
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 3 },
+                shadowOpacity: 1,
+                shadowRadius: 3,
+              }}
+              resizeMode="contain"
+            />
+          </View>
         </View>
 
-        {/* Main Content Image */}
-        <View className="flex-1 justify-center items-center mb-8">
+        {/* Main Image */}
+        <View className="flex-1 items-center relative">
           <Image
-            source={require('../../assets/plantassets/Content.png')}
-            className="w-80 h-96"
+            source={require("../../assets/plantassets/Leafs.png")}
             resizeMode="contain"
+            className="-rotate-[6deg] scale-[1.2]"
+          />
+          <Image
+            source={require("../../assets/plantassets/FlatiPhone.png")}
+            resizeMode="contain"
+            className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 scale-[1.1]"
+          />
+          <Image
+            source={require("../../assets/plantassets/Artwork.png")}
+            resizeMode="contain"
+            className="absolute top-0 left-0 scale-[1.2]"
           />
         </View>
 
         {/* Bottom Section */}
-        <View className="mb-8 w-full">
-          <OnboardingButton
-            title="Continue"
-            onPress={handleContinue}
-          />
-          
-          {/* Page Indicator - 2nd step active */}
-          <View className="flex-row justify-center items-center mt-6">
-            <View className="w-2 h-2 bg-gray-300 rounded-full mx-1" />
-            <View className="w-2 h-2 bg-green-500 rounded-full mx-1" />
-            <View className="w-2 h-2 bg-gray-300 rounded-full mx-1" />
-          </View>
+        <View className="mb-10 mx-6">
+          <OnboardingButton title="Continue" onPress={handleContinue} />
+          <OnboardingPagination totalSteps={3} currentStep={1} />
         </View>
       </View>
     </OnboardingLayout>

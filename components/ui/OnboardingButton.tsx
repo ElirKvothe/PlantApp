@@ -14,7 +14,7 @@ export const OnboardingButton: React.FC<OnboardingButtonProps> = ({
     <TouchableOpacity
       onPress={onPress}
       className="w-full py-4 rounded-xl bg-[#28AF6E] active:bg-green-700"
-      activeOpacity={0.8}
+      activeOpacity={1}
     >
       <Text className="text-center font-bold text-xl text-white py-1.5">
         {title}
