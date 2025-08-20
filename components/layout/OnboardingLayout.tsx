@@ -19,9 +19,7 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({
     >
       <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent />
       <SafeAreaView className="flex-1">
-        <View className="flex-1 px-6">
           {children}
-        </View>
       </SafeAreaView>
     </ImageBackground>
   );
