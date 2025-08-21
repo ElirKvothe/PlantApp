@@ -10,7 +10,7 @@ export default function Onboarding2() {
 
   const handleContinue = () => {
     // Ana sayfaya dön (paywall henüz yok)
-    router.push("/");
+    router.push("/(onboarding)/paywall");
   };
 
   return (
