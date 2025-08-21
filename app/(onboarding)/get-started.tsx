@@ -17,7 +17,7 @@ export default function GetStarted() {
     >
       <View className="flex-1 justify-center">
         {/* Header Section */}
-        <View className="mb-8 mt-3 mx-6">
+        <View className="mb-6 mt-3 mx-6">
           <Text className="text-4xl text-gray-900 mb-2">
             Welcome to <Text className="font-bold">PlantApp</Text>
           </Text>
@@ -29,13 +29,13 @@ export default function GetStarted() {
         {/* Main Image */}
         <View className="flex-1 justify-center items-center">
           <Image
-            source={require("../../assets/plantassets/Frame 13.png")}
+            source={require("../../assets/plantassets/Frame13.png")}
             resizeMode="contain"
           />
         </View>
 
         {/* Bottom Section */}
-        <View className="mb-6 mx-6">
+        <View className="mb-2 mx-6">
           <OnboardingButton title="Get Started" onPress={handleGetStarted} />
 
           {/* Terms and Privacy */}
