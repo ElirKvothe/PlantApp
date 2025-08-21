@@ -28,7 +28,7 @@ export default function Onboarding1() {
             {/* Çizgi Asset'i */}
             <Image
               source={require("../../assets/plantassets/identify.png")} // Çizgi asset'iniz
-              className="absolute top-8 right-5"
+              className="absolute mt-8 mr-5 self-end"
               resizeMode="contain"
             />
           </View>
