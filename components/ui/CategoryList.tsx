@@ -1,11 +1,18 @@
-import { usePlantCategories } from '@/hooks/usePlantCategories';
 import { PlantCategory } from '@/types/plant';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { CategoryCard } from './CategoryCard';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { fetchCategories, clearError } from '@/store/slices/plantSlice';
 
 export const CategoriesList: React.FC = () => {
-  const { categories, loading, error, refetch } = usePlantCategories();
+  const dispatch = useAppDispatch();
+  const { categories, loading, error } = useAppSelector((state) => state.plants);
+
+  const handleRetry = () => {
+    dispatch(clearError());
+    dispatch(fetchCategories());
+  };
 
   if (loading) {
     return (
@@ -21,7 +28,7 @@ export const CategoriesList: React.FC = () => {
       <View className="h-[200px] justify-center items-center px-4">
         <Text className="text-red-500 text-center mb-3 text-sm">{error}</Text>
         <TouchableOpacity 
-          onPress={refetch}
+          onPress={handleRetry}
           className="bg-blue-500 px-4 py-2 rounded-lg"
         >
           <Text className="text-white text-sm">Tekrar Dene</Text>

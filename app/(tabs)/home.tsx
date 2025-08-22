@@ -1,7 +1,7 @@
 import { CategoriesList } from "@/components/ui/CategoryList";
 import { QuestionsList } from "@/components/ui/QuestionList";
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Dimensions,
   ImageBackground,
@@ -11,8 +11,20 @@ import {
   View,
 } from "react-native";
 import MessageIcon from "../../components/ui/MessageIcon";
+import { useAppDispatch } from "@/store/hooks";
+import { fetchCategories } from "@/store/slices/plantSlice";
+import { fetchQuestions } from "@/store/slices/questionSlice";
 
 export default function Home() {
+  const dispatch = useAppDispatch();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Load data when component mounts
+  useEffect(() => {
+    dispatch(fetchCategories());
+    dispatch(fetchQuestions());
+  }, [dispatch]);
+
   return (
     <View className="flex-1 bg-[#FBFAFA]">
       {/* Fixed Header - Background + Home Text */}
@@ -47,6 +59,8 @@ export default function Home() {
               placeholderTextColor="#666"
               className="flex-1 text-black text-base"
               textAlignVertical="center"
+              value={searchQuery}
+              onChangeText={setSearchQuery}
             />
           </View>
         </View>

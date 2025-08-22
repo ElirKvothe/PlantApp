@@ -1,11 +1,18 @@
 import React from 'react';
 import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native';
-import { useQuestions } from '@/hooks/useQuestions';
 import { QuestionCard } from './QuestionCard';
 import { Question } from '@/types/question';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { fetchQuestions, clearError } from '@/store/slices/questionSlice';
 
 export const QuestionsList: React.FC = () => {
-  const { questions, loading, error, refetch } = useQuestions();
+  const dispatch = useAppDispatch();
+  const { questions, loading, error } = useAppSelector((state) => state.questions);
+
+  const handleRetry = () => {
+    dispatch(clearError());
+    dispatch(fetchQuestions());
+  };
 
   if (loading) {
     return (
@@ -21,7 +28,7 @@ export const QuestionsList: React.FC = () => {
       <View className="h-[164px] justify-center items-center px-4">
         <Text className="text-red-500 text-center mb-3 text-sm">{error}</Text>
         <TouchableOpacity 
-          onPress={refetch}
+          onPress={handleRetry}
           className="bg-blue-500 px-4 py-2 rounded-lg"
         >
           <Text className="text-white text-sm">Tekrar Dene</Text>

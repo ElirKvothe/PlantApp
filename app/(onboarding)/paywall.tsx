@@ -9,21 +9,25 @@ import {
 } from "react-native";
 import { FeaturesList } from "../../components/ui/FeaturesList";
 import { OnboardingButton } from "../../components/ui/OnboardingButton";
-
+import { useAppDispatch } from "@/store/hooks";
+import { completeOnboarding } from "@/store/slices/appSlice";
 
 export default function Paywall() {
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const [selectedPlan, setSelectedPlan] = useState<"yearly" | "monthly">(
     "yearly"
   );
 
-  const handleClose = () => {
-    router.push("/(tabs)/diagnose");
+  const handleClose = async () => {
+    await dispatch(completeOnboarding());
+    router.replace("/(tabs)/home");
   };
 
-  const handleTryFree = () => {
+  const handleTryFree = async () => {
     console.log("Starting free trial with plan:", selectedPlan);
-    router.push("/(tabs)/diagnose");
+    await dispatch(completeOnboarding());
+    router.replace("/(tabs)/home");
   };
 
   return (
