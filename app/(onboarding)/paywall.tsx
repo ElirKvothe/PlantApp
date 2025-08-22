@@ -18,12 +18,12 @@ export default function Paywall() {
   );
 
   const handleClose = () => {
-    router.push("/");
+    router.push("/(tabs)/diagnose");
   };
 
   const handleTryFree = () => {
     console.log("Starting free trial with plan:", selectedPlan);
-    router.push("/");
+    router.push("/(tabs)/diagnose");
   };
 
   return (
