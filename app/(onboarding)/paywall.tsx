@@ -25,7 +25,6 @@ export default function Paywall() {
   };
 
   const handleTryFree = async () => {
-    console.log("Starting free trial with plan:", selectedPlan);
     await dispatch(completeOnboarding());
     router.replace("/(tabs)/home");
   };
@@ -56,7 +55,7 @@ export default function Paywall() {
         />
       </View>
 
-      {/* Main Content → alttan yukarı hizalı */}
+      {/* Main Content */}
       <View className="flex-1 mb-3 pb-6 justify-end">
         {/* Title */}
         <View className="mb-5 px-6">
@@ -75,16 +74,19 @@ export default function Paywall() {
               id: "1",
               title: "Unlimited",
               subtitle: "Plant Identify",
+              icon: "scan",
             },
             {
               id: "2",
               title: "Faster",
               subtitle: "Process",
+              icon: "speedometer",
             },
             {
               id: "3",
               title: "Detailed",
               subtitle: "Plant care",
+              icon: "leaf",
             },
           ]}
         />
@@ -158,7 +160,7 @@ export default function Paywall() {
         {/* Footer */}
         <View className="mt-2 px-6">
           <Text className="text-center font-light text-[9px] leading-3 text-white/60 mb-2.5">
-            After the 3-day free trial period you'll be charged ₺274.99 per year
+            After the 3-day free trial period you&apos;ll be charged ₺274.99 per year
             unless you cancel before the trial expires. Yearly Subscription is
             Auto-Renewable
           </Text>

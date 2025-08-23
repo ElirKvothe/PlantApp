@@ -26,7 +26,7 @@ export default function Onboarding1() {
               {"\n"} the plant!
             </Text>
 
-            {/* Çizgi Asset'i */}
+            {/* Line Asset */}
               <Image
               source={images.plant.identify} 
               className="absolute mt-8 mr-5 self-end"
@@ -48,7 +48,7 @@ export default function Onboarding1() {
           <OnboardingButton title="Continue" onPress={handleContinue} />
         </View>
 
-        {/* Pagination at the very bottom */}
+        {/* Pagination at the bottom */}
         <View className="mx-6 mb-3">
           <OnboardingPagination totalSteps={3} currentStep={0} />
         </View>

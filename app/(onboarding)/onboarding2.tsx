@@ -26,7 +26,7 @@ export default function Onboarding2() {
               {"\n"}
             </Text>
 
-            {/* Çizgi Asset'i */}
+            {/* Line Asset */}
             <Image
               source={images.plant.careGuides}
               className="absolute mt-9 mr-[68px] self-end scale-[1.1]"

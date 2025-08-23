@@ -1,5 +1,5 @@
 import { PlantCategory } from '@/types/plant';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { CategoryCard } from './CategoryCard';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -40,7 +40,6 @@ export const CategoriesList: React.FC = () => {
   const renderCategory = ({ item }: { item: PlantCategory }) => (
     <CategoryCard 
       category={item} 
-      onPress={() => console.log('Category pressed:', item.title)}
     />
   );
 

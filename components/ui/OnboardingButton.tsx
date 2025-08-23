@@ -1,10 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-
-interface OnboardingButtonProps {
-  title: string;
-  onPress: () => void;
-}
+import { OnboardingButtonProps } from '../../types/component';
 
 export const OnboardingButton: React.FC<OnboardingButtonProps> = ({
   title,

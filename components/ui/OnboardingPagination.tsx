@@ -1,12 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-
-interface OnboardingPaginationProps {
-  totalSteps: number;
-  currentStep: number;
-  activeColor?: string;
-  inactiveColor?: string;
-}
+import { OnboardingPaginationProps } from '../../types/component';
 
 export const OnboardingPagination: React.FC<OnboardingPaginationProps> = ({
   totalSteps,

@@ -1,11 +1,6 @@
 import React from 'react';
 import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
-import { Question } from '@/types/question';
-
-interface QuestionCardProps {
-  question: Question;
-  onPress?: () => void;
-}
+import { QuestionCardProps } from '../../types/component';
 
 export const QuestionCard: React.FC<QuestionCardProps> = ({ question, onPress }) => {
   return (

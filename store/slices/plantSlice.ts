@@ -1,14 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { PlantCategory } from '@/types/plant';
 import { api } from '@/utils/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-interface PlantState {
-  categories: PlantCategory[];
-  loading: boolean;
-  error: string | null;
-  lastFetched: number | null;
-}
+import { PlantState } from '../../types/store';
 
 const initialState: PlantState = {
   categories: [],

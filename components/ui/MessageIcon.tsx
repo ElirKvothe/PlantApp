@@ -1,10 +1,6 @@
 import React from 'react';
-import Svg, { G, Path, Rect, Defs, Filter, FeFlood, FeColorMatrix, FeOffset, FeGaussianBlur, FeComposite, FeBlend, ClipPath, LinearGradient, Stop, ForeignObject } from 'react-native-svg';
-
-interface MessageIconProps {
-  width?: number;
-  height?: number;
-}
+import Svg, { G, Path, Rect, Defs, LinearGradient, Stop } from 'react-native-svg';
+import { MessageIconProps } from '../../types/component';
 
 export default function MessageIcon({ width = 52, height = 45 }: MessageIconProps) {
   return (

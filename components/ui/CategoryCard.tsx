@@ -1,11 +1,6 @@
-import { PlantCategory } from '@/types/plant';
 import React from 'react';
 import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
-
-interface CategoryCardProps {
-  category: PlantCategory;
-  onPress?: () => void;
-}
+import { CategoryCardProps } from '../../types/component';
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({ category, onPress }) => {
   return (

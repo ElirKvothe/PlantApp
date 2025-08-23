@@ -1,11 +1,7 @@
 import React from 'react';
-import { View, ImageBackground, StatusBar } from 'react-native';
+import { ImageBackground, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-interface OnboardingLayoutProps {
-  children: React.ReactNode;
-  backgroundSource: any;
-}
+import { OnboardingLayoutProps } from '../../types/component';
 
 export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({
   children,

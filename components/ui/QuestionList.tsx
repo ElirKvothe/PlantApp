@@ -39,8 +39,6 @@ export const QuestionsList: React.FC = () => {
 
   const handleQuestionPress = (question: Question) => {
     // Soruya tıklandığında yapılacak işlem
-    console.log('Question pressed:', question.title);
-    // Buraya navigation ekleyebilirsin
   };
 
   const renderQuestion = ({ item }: { item: Question }) => (

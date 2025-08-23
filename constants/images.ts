@@ -1,4 +1,4 @@
-// Plant Assets - Professional image constants approach
+// Plant Assets 
 export const images = {
   plant: {
     background: require('../assets/plantassets/Background.png'),

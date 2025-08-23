@@ -1,10 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-interface AppState {
-  hasCompletedOnboarding: boolean;
-  isLoading: boolean;
-}
+import { AppState } from '../../types/store';
 
 const initialState: AppState = {
   hasCompletedOnboarding: false,

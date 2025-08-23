@@ -1,14 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { Question } from '@/types/question';
 import { api } from '@/utils/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-interface QuestionState {
-  questions: Question[];
-  loading: boolean;
-  error: string | null;
-  lastFetched: number | null;
-}
+import { QuestionState } from '../../types/store';
 
 const initialState: QuestionState = {
   questions: [],

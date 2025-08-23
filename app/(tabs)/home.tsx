@@ -20,7 +20,6 @@ export default function Home() {
   const dispatch = useAppDispatch();
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Load data when component mounts
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(fetchQuestions());
@@ -28,7 +27,7 @@ export default function Home() {
 
   return (
     <View className="flex-1 bg-[#FBFAFA]">
-      {/* Fixed Header - Background + Home Text */}
+      {/* Header */}
       <View
         className="w-full relative"
         style={{ height: Dimensions.get("screen").height / 4.64 }}
@@ -38,7 +37,7 @@ export default function Home() {
           className="size-full"
           resizeMode="stretch"
         />
-        {/* HOME Text Overlay */}
+        {/* HOME Text */}
         <View className="absolute inset-0 justify-center mx-6 mt-[50px]">
           <Text className="text-black text-lg">
             Hi, plant lover!
@@ -47,7 +46,7 @@ export default function Home() {
             Good Afternoon! ⛅
           </Text>
           
-          {/* Search Input with Icon */}
+          {/* Search Input */}
           <View className="bg-white opacity-90 h-[44px] w-full rounded-xl my-[14px] px-4 flex-row items-center shadow-sm">
             <Ionicons
               name="search"
@@ -75,12 +74,10 @@ export default function Home() {
       >
         {/* Free Premium Button */}
         <View className="flex-row items-center m-6 h-[64px] bg-black rounded-xl">
-          {/* Left Icon */}
           <View className="pl-3" >
             <MessageIcon width={48} height={40} />
           </View>
           
-          {/* Center Text */}
           <View className="flex-1 pl-4">
             <Text className="font-bold leading-5 tracking-tight"
             style={{
@@ -96,7 +93,6 @@ export default function Home() {
             </Text>
           </View>
           
-          {/* Right Arrow Icon */}
           <View className="pr-3">
             <Ionicons
               name="chevron-forward"

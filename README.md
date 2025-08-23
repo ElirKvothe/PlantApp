@@ -1,50 +1,88 @@
-# Welcome to your Expo app 👋
+# 🌱 PlantApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Modern React Native plant application.
 
-## Get started
+## 📱 Features
 
-1. Install dependencies
+- **Home Page**: Discover plant categories and view frequently asked questions
+- **Onboarding**: First-time user experience and paywall
 
+## 🛠 Technologies
+
+- **React Native** + **Expo**
+- **TypeScript** - Type safety
+- **Redux Toolkit** - State management
+- **Expo Router** - Navigation (file-based routing)
+- **NativeWind** - Tailwind CSS styling
+- **Axios** - API requests
+- **AsyncStorage** - Local data storage
+
+## 🚀 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ElirKvothe/PlantApp
+   cd PlantApp
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. **Start the application**
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. **Run on device**
+   - Press `i` for iOS
+   - Press `a` for Android
+   - Scan QR code for physical device
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## 🧪 Testing
 
 ```bash
-npm run reset-project
+npm test                    # Run tests
+npm run test:watch         # Run tests in watch mode
+npm run test:coverage      # Run tests with coverage
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 📜 Scripts
 
-## Learn more
+```bash
+npm start                  # Development server
+npm run android           # Run on Android
+npm run ios              # Run on iOS
+npm run lint             # ESLint check
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🏗 Architecture
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- **State Management**: Global state with Redux Toolkit
+- **Navigation**: File-based routing with Expo Router
+- **API**: HTTP requests with Axios and interceptors
+- **Storage**: Local data with AsyncStorage
+- **Styling**: Tailwind CSS with NativeWind
 
-## Join the community
+## 📋 Current Status
 
-Join our community of developers creating universal apps.
+✅ **Completed**:
+- Onboarding flow and paywall
+- Home page categories and questions
+- Redux store structure
+- Tab navigation
+- Basic UI components
+- Test infrastructure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🤝 Development
+
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
+
+---
+
+Built with React Native and Expo 🌱
