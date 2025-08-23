@@ -9,7 +9,11 @@ interface CategoryCardProps {
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({ category, onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.8} className="flex-1">
+    <TouchableOpacity 
+      onPress={onPress} 
+      activeOpacity={0.8} 
+      className='w-[48%]'
+    >
       <View className="h-[152px] rounded-xl overflow-hidden shadow-lg border-[0.5px] border-gray-300">
         <ImageBackground
           source={{ uri: category.image?.url || '' }}

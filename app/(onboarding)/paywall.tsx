@@ -1,3 +1,5 @@
+import { useAppDispatch } from "@/store/hooks";
+import { completeOnboarding } from "@/store/slices/appSlice";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
@@ -9,8 +11,6 @@ import {
 } from "react-native";
 import { FeaturesList } from "../../components/ui/FeaturesList";
 import { OnboardingButton } from "../../components/ui/OnboardingButton";
-import { useAppDispatch } from "@/store/hooks";
-import { completeOnboarding } from "@/store/slices/appSlice";
 
 export default function Paywall() {
   const router = useRouter();
@@ -75,19 +75,16 @@ export default function Paywall() {
               id: "1",
               title: "Unlimited",
               subtitle: "Plant Identify",
-              icon: "",
             },
             {
               id: "2",
               title: "Faster",
               subtitle: "Process",
-              icon: "",
             },
             {
               id: "3",
               title: "Detailed",
               subtitle: "Plant care",
-              icon: "leaf",
             },
           ]}
         />

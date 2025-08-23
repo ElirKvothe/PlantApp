@@ -3,6 +3,7 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import { OnboardingLayout } from "../../components/layout/OnboardingLayout";
 import { OnboardingButton } from "../../components/ui/OnboardingButton";
+import { images } from "../../constants/images";
 
 export default function GetStarted() {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function GetStarted() {
 
   return (
     <OnboardingLayout
-      backgroundSource={require("../../assets/plantassets/Background.png")}
+      backgroundSource={images.plant.background}
     >
       <View className="flex-1 justify-center">
         {/* Header Section */}
@@ -29,7 +30,7 @@ export default function GetStarted() {
         {/* Main Image */}
         <View className="flex-1 justify-center items-center">
           <Image
-            source={require("../../assets/plantassets/Frame13.png")}
+            source={images.plant.frame13}
             resizeMode="contain"
           />
         </View>

@@ -1,7 +1,7 @@
+import { AntDesign } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { View } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
 
 export default function ScanButton() {
   return (
@@ -26,8 +26,8 @@ export default function ScanButton() {
           elevation: 5,
         }}
       >
-        <MaterialCommunityIcons 
-          name="camera-outline" 
+        <AntDesign 
+          name="scan1" 
           size={25} 
           color="#FFFFFF" 
         />

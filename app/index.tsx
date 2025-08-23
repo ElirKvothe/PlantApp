@@ -23,7 +23,7 @@ export default function Index() {
 
   // Redirect based on onboarding status
   if (hasCompletedOnboarding) {
-    return <Redirect href="/(tabs)/home" />;
+    return <Redirect href="/(onboarding)/get-started" />;
   } else {
     return <Redirect href="/(onboarding)/get-started" />;
   }

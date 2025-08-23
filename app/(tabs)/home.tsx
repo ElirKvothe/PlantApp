@@ -1,5 +1,8 @@
 import { CategoriesList } from "@/components/ui/CategoryList";
 import { QuestionsList } from "@/components/ui/QuestionList";
+import { useAppDispatch } from "@/store/hooks";
+import { fetchCategories } from "@/store/slices/plantSlice";
+import { fetchQuestions } from "@/store/slices/questionSlice";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect, useState } from "react";
 import {
@@ -11,9 +14,7 @@ import {
   View,
 } from "react-native";
 import MessageIcon from "../../components/ui/MessageIcon";
-import { useAppDispatch } from "@/store/hooks";
-import { fetchCategories } from "@/store/slices/plantSlice";
-import { fetchQuestions } from "@/store/slices/questionSlice";
+import { images } from "../../constants/images";
 
 export default function Home() {
   const dispatch = useAppDispatch();
@@ -33,7 +34,7 @@ export default function Home() {
         style={{ height: Dimensions.get("screen").height / 4.64 }}
       >
         <ImageBackground
-          source={require("../../assets/plantassets/HomeBackground.png")}
+          source={images.plant.homeBackground}
           className="size-full"
           resizeMode="stretch"
         />
@@ -70,7 +71,7 @@ export default function Home() {
       <ScrollView 
         className="flex-1" 
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 20 }}
+        contentContainerStyle={{ paddingBottom: 100 }} // 20'den 100'e çıkarıyoruz
       >
         {/* Free Premium Button */}
         <View className="flex-row items-center m-6 h-[64px] bg-black rounded-xl">

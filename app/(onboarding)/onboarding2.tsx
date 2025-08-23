@@ -4,18 +4,18 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import { OnboardingLayout } from "../../components/layout/OnboardingLayout";
 import { OnboardingButton } from "../../components/ui/OnboardingButton";
+import { images } from "../../constants/images";
 
 export default function Onboarding2() {
   const router = useRouter();
 
   const handleContinue = () => {
-    // Ana sayfaya dön (paywall henüz yok)
     router.push("/(onboarding)/paywall");
   };
 
   return (
     <OnboardingLayout
-      backgroundSource={require("../../assets/plantassets/Background.png")}
+      backgroundSource={images.plant.background}
     >
       <View className="flex-1 justify-center">
         {/* Header Section */}
@@ -28,7 +28,7 @@ export default function Onboarding2() {
 
             {/* Çizgi Asset'i */}
             <Image
-              source={require("../../assets/plantassets/careguides.png")} // Çizgi asset'iniz
+              source={images.plant.careGuides}
               className="absolute mt-9 mr-[68px] self-end scale-[1.1]"
               style={{
                 shadowColor: '#000',
@@ -43,17 +43,17 @@ export default function Onboarding2() {
         {/* Main Image */}
         <View className="flex-1 items-center relative">
         <Image
-            source={require("../../assets/plantassets/Artwork.png")}
+            source={images.plant.artwork}
             resizeMode="contain"
             className="absolute z-10 scale-[1.1]"
           />
           <Image
-            source={require("../../assets/plantassets/Leafs.png")}
+            source={images.plant.leafs}
             resizeMode="contain"
             className="-rotate-[1deg] scale-[1.1]"
           />
           <Image
-            source={require("../../assets/plantassets/FlatiPhone.png")}
+            source={images.plant.flatiPhone}
             resizeMode="contain"
             className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 scale-[1.1]"
           />

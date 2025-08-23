@@ -58,7 +58,8 @@ export const CategoriesList: React.FC = () => {
         gap: 16
       }}
       columnWrapperStyle={{ 
-        gap: 11
+        gap: 11,
+        justifyContent: 'flex-start' 
       }}
     />
   );

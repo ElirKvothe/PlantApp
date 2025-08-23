@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { FlatList, Text, View } from 'react-native';
 
@@ -5,7 +6,6 @@ interface Feature {
   id: string;
   title: string;
   subtitle: string;
-  icon: string;
 }
 
 interface FeaturesListProps {
@@ -13,18 +13,32 @@ interface FeaturesListProps {
 }
 
 export const FeaturesList: React.FC<FeaturesListProps> = ({ features }) => {
+  // İkon tipini belirle
+  const getIconName = (title: string): keyof typeof Ionicons.glyphMap => {
+    switch (title) {
+      case 'Unlimited':
+        return 'scan';
+      case 'Faster':
+        return 'speedometer';
+      case 'Detailed':
+        return 'leaf';
+      default:
+        return 'help-circle';
+    }
+  };
+
   const renderFeature = ({ item }: { item: Feature }) => (
     <View
       className="w-[156px] h-[130px] rounded-[14px] relative bg-white/10 shadow-lg"
     >
       {/* Icon Container */}
       <View
-        className="w-9 h-9 rounded-lg bg-black/30 ml-4 mt-4"
+        className="w-9 h-9 rounded-lg bg-black/30 ml-4 mt-4 justify-center items-center"
       >
-        {/* Icon placeholder */}
-        <View
-          className="w-[18px] h-[18px] bg-white/70 rounded"
-          style={{ left: 9, top: 9 }}
+        <Ionicons
+          name={getIconName(item.title)}
+          size={18}
+          color="rgba(255, 255, 255, 0.8)"
         />
       </View>
 

@@ -4,6 +4,7 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import { OnboardingLayout } from "../../components/layout/OnboardingLayout";
 import { OnboardingButton } from "../../components/ui/OnboardingButton";
+import { images } from "../../constants/images";
 
 export default function Onboarding1() {
   const router = useRouter();
@@ -14,7 +15,7 @@ export default function Onboarding1() {
 
   return (
     <OnboardingLayout
-      backgroundSource={require("../../assets/plantassets/Background.png")}
+      backgroundSource={images.plant.background}
     >
       <View className="flex-1 justify-center">
         {/* Header Section */}
@@ -26,20 +27,19 @@ export default function Onboarding1() {
             </Text>
 
             {/* Çizgi Asset'i */}
-            <Image
-              source={require("../../assets/plantassets/identify.png")} // Çizgi asset'iniz
+              <Image
+              source={images.plant.identify} 
               className="absolute mt-8 mr-5 self-end"
-              resizeMode="contain"
-            />
+                resizeMode="contain"
+              />
           </View>
         </View>
 
         {/* Main Image */}
         <View className="flex-1 items-center mt-3">
           <Image
-            source={require("../../assets/plantassets/Content.png")}
+            source={images.plant.content}
             resizeMode="contain"
-            className="scale-[1.1]"
           />
         </View>
 
