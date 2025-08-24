@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 
-export interface Feature {
+export interface FeatureCardProps {
   id: string;
   title: string;
   subtitle: string;
@@ -9,10 +9,8 @@ export interface Feature {
   height?: number;
 }
 
-export interface FeatureCardProps extends Feature {}
-
 export interface FeaturesListProps {
-  features: Feature[];
+  features: FeatureCardProps[];
   horizontal?: boolean;
   showsScrollIndicator?: boolean;
   itemSpacing?: number;

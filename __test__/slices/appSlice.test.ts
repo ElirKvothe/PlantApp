@@ -35,7 +35,7 @@ describe('appSlice', () => {
       const result = await store.dispatch(checkOnboardingStatus());
       
       expect(result.payload).toBe(true);
-      expect(mockAsyncStorage.getItem).toHaveBeenCalledWith('onboarding_completed');
+      expect(mockAsyncStorage.getItem).toHaveBeenCalledWith('is_onboarding_completed');
     });
 
     it('should return false when onboarding is not completed', async () => {
@@ -89,7 +89,7 @@ describe('appSlice', () => {
       const result = await store.dispatch(completeOnboarding());
       
       expect(result.payload).toBe(true);
-      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('onboarding_completed', 'true');
+      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('is_onboarding_completed', 'true');
     });
 
     it('should handle AsyncStorage error', async () => {

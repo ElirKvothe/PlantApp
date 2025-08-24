@@ -12,9 +12,10 @@ export const checkOnboardingStatus = createAsyncThunk(
   'app/checkOnboardingStatus',
   async () => {
     try {
-      const hasCompleted = await AsyncStorage.getItem('onboarding_completed');
+      const hasCompleted = await AsyncStorage.getItem('is_onboarding_completed');
       return hasCompleted === 'true';
     } catch (error) {
+      console.log(error)
       return false;
     }
   }
@@ -25,7 +26,7 @@ export const completeOnboarding = createAsyncThunk(
   'app/completeOnboarding',
   async () => {
     try {
-      await AsyncStorage.setItem('onboarding_completed', 'true');
+      await AsyncStorage.setItem('is_onboarding_completed', 'true');
       return true;
     } catch (error) {
       throw error;

@@ -8,5 +8,3 @@ export interface Question {
   order: number;
 }
 
-// API Response interface
-export type QuestionsResponse = Question[];
